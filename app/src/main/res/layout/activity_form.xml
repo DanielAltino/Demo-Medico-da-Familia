@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="361dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/ConstraintLayout">
+
+            <EditText
+                android:id="@+id/etGenero"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="Seu gênero"
+                android:inputType="textPersonName"
+                android:text="Masculino"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSobrenome" />
+
+            <EditText
+                android:id="@+id/etDataNasc"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="Data de nascimento"
+                android:inputType="date|textPersonName"
+                android:text="01/05/1980"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTipoSanguineo" />
+
+            <EditText
+                android:id="@+id/etTipoSanguineo"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="Seu tipo sanguíneo"
+                android:inputType="textPersonName"
+                android:text="A+"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etState" />
+
+            <EditText
+                android:id="@+id/etState"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="Estado de residência"
+                android:inputType="textPersonName"
+                android:text="Minas Gerais"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etRegistro" />
+
+            <EditText
+                android:id="@+id/etRegistro"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="Número de registro"
+                android:inputType="textPersonName"
+                android:text="98.987.456"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etRG" />
+
+            <EditText
+                android:id="@+id/etRG"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="Seu RG"
+                android:inputType="textPersonName"
+                android:text="MG-12.345.678"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCPF" />
+
+            <EditText
+                android:id="@+id/etCPF"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="Seu CPF"
+                android:inputType="textPersonName"
+                android:text="123.456.789-00"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etGenero" />
+
+            <EditText
+                android:id="@+id/etSobrenome"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="Seu sobrenome"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="Seu nome"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvGenero"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Gênero:"
+                app:layout_constraintEnd_toStartOf="@+id/etGenero"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJob" />
+
+            <TextView
+                android:id="@+id/tvRegistro"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Número de registro:"
+                app:layout_constraintEnd_toStartOf="@+id/etRegistro"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRG" />
+
+            <TextView
+                android:id="@+id/tvDataNasc"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Nascimento:"
+                app:layout_constraintEnd_toStartOf="@+id/etDataNasc"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipoSanguineo" />
+
+            <TextView
+                android:id="@+id/tvTipoSanguineo"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Tipo Sanguineo:"
+                app:layout_constraintEnd_toStartOf="@+id/etTipoSanguineo"
+                app:layout_constraintHorizontal_bias="0.695"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvState" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Nome:"
+                app:layout_constraintEnd_toStartOf="@+id/etName"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvJob"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="76dp"
+                android:gravity="center_vertical"
+                android:text="Cargo:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical"
+                android:text="Estado:"
+                app:layout_constraintEnd_toStartOf="@+id/etState"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
+
+            <TextView
+                android:id="@+id/tvRG"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="RG:"
+                app:layout_constraintEnd_toStartOf="@+id/etRG"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCPF" />
+
+            <TextView
+                android:id="@+id/tvCPF"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="CPF:"
+                app:layout_constraintEnd_toStartOf="@+id/etCPF"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGenero" />
+
+            <TextView
+                android:id="@+id/tvSobrenome"
+                android:layout_width="103dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Sobrenome:"
+                app:layout_constraintEnd_toStartOf="@+id/etSobrenome"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <Spinner
+                android:id="@+id/spinnerTipoAcesso"
+                android:layout_width="190dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSobrenome" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnGoToPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+</android.support.constraint.ConstraintLayout>
