@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.zebra.printstationcard.BluetoothPrinter;
 import com.zebra.printstationcard.MainActivity;
 import com.zebra.printstationcard.util.UIHelper;
 
@@ -20,7 +19,6 @@ public class FirstActivity extends AppCompatActivity {
     Button btnSignup;
     Button btnPrintCard;
     Button btnIdentify;
-    Button btnPrintText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +29,6 @@ public class FirstActivity extends AppCompatActivity {
         btnSignup = (Button) findViewById(R.id.btnSignup);
         btnPrintCard = (Button) findViewById(R.id.btnPrintCard);
         btnIdentify = (Button) findViewById(R.id.btnIdentify);
-        btnPrintText = (Button) findViewById(R.id.btnPrintText);
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,15 +53,6 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(FirstActivity.this, "Identification", Toast.LENGTH_SHORT).show();
                 Intent printIntent = new Intent(FirstActivity.this, MainActivity.class);
-                startActivity(printIntent);
-            }
-        });
-
-        btnPrintText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(FirstActivity.this, "Identification", Toast.LENGTH_SHORT).show();
-                Intent printIntent = new Intent(FirstActivity.this, BluetoothPrinter.class);
                 startActivity(printIntent);
             }
         });

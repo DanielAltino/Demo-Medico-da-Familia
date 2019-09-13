@@ -13,7 +13,7 @@
     <string name="no_templates_found">Sem templates encontrados</string>
     <string name="photo">Photo</string>
     <string name="print">Imprimir</string>
-    <string name="connect">Conectar</string>
+    <string name="connect">Connect</string>
     <string name="disconnect">Disconnect</string>
     <string name="retry">Retry</string>
     <string name="printer_dns_ip_address">Impressora DNS/IP Endereço</string>
@@ -69,12 +69,13 @@
     <string name="zebra_technologies">&#169; Zebra Technologies Corporation 2018</string>
     <string name="prime_technologies">&#169; Aidc Tecnologia Ltda 2019</string>
     <string name="application_version">Version 1.0</string>
-    <string name="nome_printer">Nome da Impressora</string>
-    <string name="desconnect">Desconectar</string>
+
 
 
     <string-array name="tipo_acesso">
         <item>Médico</item>
         <item>Paciente</item>
     </string-array>
+
+
 </resources>

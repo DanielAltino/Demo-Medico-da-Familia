@@ -1,29 +1,23 @@
 package com.zebra.printstationcard.fingerprint;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.zebra.printstationcard.R;
-import com.zebra.printstationcard.util.UIHelper;
-
-import java.util.ArrayList;
+import com.zebra.printstationcard.util.*;
 
 public class FormActivity extends AppCompatActivity {
 
     private Button btnGoToPicture;
-    private EditText etName, etSobrenome, etCpf, etRg, etState, etCargo, etTipoSanguineo, etNascimento, etGenero, etPorteArma, etRegistro;
-    private String name, sobrenome, cpf, rg, state, cargo, tipo_sanguineo, nascimento, genero, porte_arma, registro, dados;
+    private Spinner etAcesso;
+    private EditText etName, etSobrenome, etCpf, etRg, etState, etTipoSanguineo, etNascimento, etGenero, etPorteArma, etEndereco;
+    private String name, sobrenome, cpf, rg, state, tipoDeAcesso, tipo_sanguineo, nascimento, genero, porte_arma, endereco, dados;
 
 
     //o Tipo de acesso vai dizer se o usuario é um médico ou passiente
@@ -46,7 +40,12 @@ public class FormActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getString();
-                Intent cameraIntent = new Intent(FormActivity.this, CameraActivity.class);
+
+                //TIREI A CAMERA PRA AGILIZAR OS TESTES
+                //Intent cameraIntent = new Intent(FormActivity.this, CameraActivity.class);
+                Intent cameraIntent = new Intent(FormActivity.this, EnrollActivity.class);
+
+
                 cameraIntent.putExtra("Dados", dados);
                 startActivity(cameraIntent);
             }
@@ -60,13 +59,14 @@ public class FormActivity extends AppCompatActivity {
         btnGoToPicture = (Button) findViewById(R.id.btnGoToPicture);
         etName = (EditText) findViewById(R.id.etName);
         etSobrenome = (EditText) findViewById(R.id.etSobrenome);
-        etRegistro = (EditText) findViewById(R.id.etRegistro);
+        etEndereco = (EditText) findViewById(R.id.etEndereco);
         etCpf = (EditText) findViewById(R.id.etCPF);
         etRg = (EditText) findViewById(R.id.etRG);
         etState = (EditText) findViewById(R.id.etState);
         etTipoSanguineo = (EditText) findViewById(R.id.etTipoSanguineo);
         etNascimento = (EditText) findViewById(R.id.etDataNasc);
         etGenero = (EditText) findViewById(R.id.etGenero);
+        etAcesso = (Spinner) findViewById(R.id.spinnerTipoAcesso);
 
 
         spinner_tipo_Acesso = (Spinner) findViewById(R.id.spinnerTipoAcesso);
@@ -78,16 +78,16 @@ public class FormActivity extends AppCompatActivity {
     private String getString() {
         name = etName.getText().toString();
         sobrenome = etSobrenome.getText().toString();
-        registro = etRegistro.getText().toString();
+        endereco = etEndereco.getText().toString();
         cpf = etCpf.getText().toString();
         rg = etRg.getText().toString();
         state = etState.getText().toString();
-        cargo = etCargo.getText().toString();
+        tipoDeAcesso = etAcesso.getSelectedItem().toString();
         tipo_sanguineo = etTipoSanguineo.getText().toString();
         nascimento = etNascimento.getText().toString();
         genero = etGenero.getText().toString();
 
-        dados = "NAME:" + name + "£" + "SOBRENOME:" + sobrenome + "£" + "CPF:" + cpf + "£" + "RG:" + rg + "£" + "REGISTRO:" + registro +"£"+ "ESTADO:" + state +"£" + "CARGO:" + cargo
+        dados = "NAME:" + name + "£" + "SOBRENOME:" + sobrenome + "£" + "CPF:" + cpf + "£" + "RG:" + rg + "£" + "ENDERECO:" + endereco +"£"+ "ESTADO:" + state +"£" + "ACESSO:" + tipoDeAcesso
                 +"£" + "TIPO_SANGUINEO:" + state + "£" + "NASCIMENTO:" + nascimento +"£" + "GENERO:" + genero +"£";
 
         return dados;

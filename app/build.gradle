@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+def signingFile = file("./signing.gradle")
+if (signingFile.exists())
+    apply from: signingFile
+
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -24,21 +29,26 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/DEPENDENCIES'
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.*ar'])
-    implementation 'com.android.support:appcompat-v7:25.3.1'
-    implementation 'com.android.support:design:25.3.1'
-    implementation 'com.android.support:preference-v7:25.3.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:preference-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
-
     testImplementation 'junit:junit:4.12'
     implementation files('libs/cw-deviceapi20190815.jar')
-
 
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    //Libraries
+    implementation 'com.github.mazenrashed:Printooth:1.2.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

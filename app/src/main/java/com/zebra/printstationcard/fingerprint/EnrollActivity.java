@@ -322,6 +322,7 @@ public class EnrollActivity extends AppCompatActivity implements View.OnClickLis
                 btnGoToMain.setVisibility(View.VISIBLE);
                 setMsg(strMsg);
                 String fileName = "FingerprintID_" + id + ".txt";
+                //Toast.makeText(EnrollActivity.this, "VALUE OF FINGERPRINT IS: " + FileUtils.bytes2HexString2(bytes, bytes.length), Toast.LENGTH_SHORT).show();
                 FileUtils.WritFile(fileName, FileUtils.bytes2HexString2(bytes, bytes.length));
                 playSound(1);
 

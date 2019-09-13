@@ -15,7 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rscja.deviceapi.FingerprintWithFIPS;
+import com.zebra.printstationcard.BluetoothPrinter.BluetoothMainActivity;
 import com.zebra.printstationcard.MainActivity;
+import com.zebra.printstationcard.Medic.MedicActivity;
+import com.zebra.printstationcard.Medic.PacientActivity;
 import com.zebra.printstationcard.R;
 
 import java.io.BufferedReader;
@@ -56,6 +59,8 @@ public class IdentificationFragment extends KeyDwonFragment implements View.OnCl
     String userPorteArma = "";
     String userPhotoPath = "";
     Button btnPrintCard;
+
+    //String userProfession = "";
 
 
     public String infoCliente;
@@ -132,11 +137,12 @@ public class IdentificationFragment extends KeyDwonFragment implements View.OnCl
                 mContext.mFingerprint.startIdentification();
                 break;
             case  R.id.Stop:
-                Intent zebraIntent = new Intent(getActivity(), MainActivity.class);
+                Intent zebraIntent = new Intent(getActivity(), BluetoothMainActivity.class);
                 startActivity(zebraIntent);
                 mContext.mFingerprint.stopIdentification();
                 break;
             case R.id.btnPrintCard:
+                /*
                 //Intent princCardIntent = new Intent(mContext, PrintCardActivity.class);
                 Intent printCardIntent = new Intent(mContext, MainActivity.class);
                 printCardIntent.putExtra("userID", userID);
@@ -153,7 +159,22 @@ public class IdentificationFragment extends KeyDwonFragment implements View.OnCl
                 printCardIntent.putExtra("userPorteArma", userPorteArma);
                 printCardIntent.putExtra("userPhotoPath", userPhotoPath);
                 startActivity(printCardIntent);
-
+*/
+                if(userCargo.equals("Médico")){
+                    Toast.makeText(mContext, "User is MEDIC", Toast.LENGTH_SHORT).show();
+                    Intent medicIntent = new Intent(mContext, MedicActivity.class);
+                    startActivity(medicIntent);
+                }
+                else{
+                    if(userCargo.equals("Paciente")){
+                        Toast.makeText(mContext, "User is PACIENT", Toast.LENGTH_SHORT).show();
+                        Intent pacientIntent = new Intent(mContext, PacientActivity.class);
+                        startActivity(pacientIntent);
+                    }
+                    else{
+                        Toast.makeText(mContext, "Something went wrong is profession", Toast.LENGTH_SHORT).show();
+                    }
+                }
                 break;
         }
     }
@@ -296,6 +317,9 @@ public class IdentificationFragment extends KeyDwonFragment implements View.OnCl
                                     case 12:
                                         userPhotoPath = infoSubstring;
                                         break;
+                                    /*case 13:
+                                        userProfession = infoSubstring;
+                                        break;*/
                                 }
                             }
                         }
